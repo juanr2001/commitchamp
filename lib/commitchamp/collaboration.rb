@@ -1,5 +1,5 @@
 module Commitchamp
-    class GithubCollaboration < ActiveRecod::Base
+    class Collaboration<ActiveRecord::Base
         belongs_to :user
         belongs_to :repo
     end
