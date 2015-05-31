@@ -1,5 +1,5 @@
 require 'httparty'
-require 'pry'
+#require 'pry'
 
 module Commitchamp
     ACCESS_TOKEN = ENV['ACCESS_TOKEN']
@@ -29,5 +29,5 @@ module Commitchamp
     end
   end
 end
-binding.pry
+#binding.pry
 
