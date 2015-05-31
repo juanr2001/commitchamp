@@ -1,5 +1,5 @@
 require 'httparty'
-
+require 'pry'
 
 module Commitchamp
     ACCESS_TOKEN = ENV['ACCESS_TOKEN']
@@ -12,17 +12,22 @@ module Commitchamp
                    "User-Agent" => "HTTParty" }
     end
 
-    # def organitazion(org)
-    #     self.class.get("/org/#{org}/repos", headers: @headers)
+    def organization_members(org)
+        self.class.get("/orgs/#{org}/members", headers: @headers)
 
-    # end
+    end
     def organization_repo(owner, repo)
         self.class.get("/repos/#{owner}/#{repo}/stats/contributors", headers: @headers)
     end
 
+    def addition_deletion(owner, repo)
+      self.class.get("/repos/#{owner}/#{repo}/stats/code_frequency", headers: @headers)
+    end
 
-
-
+    def commit_count(owner, repo)
+      self.class.get("/repos/#{owner}/#{repo}/stats/participation", headers: @headers)
+    end
   end
 end
+binding.pry
 

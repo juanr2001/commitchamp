@@ -10,12 +10,17 @@ require 'commitchamp/collaboration'
 require 'commitchamp/repo'
 
 module Commitchamp
+     ACCESS_TOKEN = ENV['ACCESS_TOKEN']
   class App
     def initialize
       @github = Github.new
+      @current_user = nil
+    end
+
+    def login
     end
   end
 end
 
-# app = Commitchamp::App.new
- binding.pry
+#app = Commitchamp::App.new
+binding.pry
